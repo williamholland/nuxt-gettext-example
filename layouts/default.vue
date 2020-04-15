@@ -28,19 +28,12 @@
     <section class="main-content columns">
       <aside class="column is-2 section">
         <p class="menu-label is-hidden-touch">
-          General
+          <b-icon icon="earth" />
         </p>
         <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
-            :key="key"
-          >
-            <nuxt-link
-              :to="item.to"
-              exact-active-class="is-active"
-            >
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </nuxt-link>
+          <li>
+            <a @click="changeLanguage('en')">English</a>
+            <a @click="changeLanguage('vi')">Tiếng Việt</a>
           </li>
         </ul>
       </aside>
@@ -69,6 +62,11 @@ export default {
         }
       ]
     }
-  }
+  },
+  methods: {
+    changeLanguage: function (newLanguage) {
+      this.$language.current = newLanguage;
+    },
+  },
 }
 </script>

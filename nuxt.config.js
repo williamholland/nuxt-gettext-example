@@ -42,6 +42,7 @@ export default {
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
     ['nuxt-gettext', {
+      defaultLanguage: 'en',
       availableLanguages: {
         'en': 'English',
         'vi': 'Vietnamese',
